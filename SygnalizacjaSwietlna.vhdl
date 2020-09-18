@@ -59,7 +59,7 @@ PCzerwoneRight <= '1';
 PZieloneRight <= '0';
 	 counter <= counter+1;
 	
-	elsif (counter = 500000000) then --zólte
+	elsif (counter = 500000000) then --zÃ³lte
 	CzerwoneRight <= '1';
 	 ZolteRight <= '1';
     ZieloneRight <= '0';
@@ -89,7 +89,7 @@ PZieloneRight <= '1';
 	 counter <= counter+1;
 	
 	 
-	 elsif (counter = 1000000000) then --zólte
+	 elsif (counter = 1000000000) then --zÃ³lte
 	CzerwoneRight <= '0';
 	 ZolteRight <= '1';
     ZieloneRight <= '0';
