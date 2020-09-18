@@ -46,75 +46,63 @@ begin
 process (i_clock)
 begin
   if rising_edge(i_clock) then
-   if(counter = 250000000) then --czerwone prawo
-	 CzerwoneRight <= '1';
-    ZieloneRight <= '0';
-    ZolteRight <= '0';
-	 CzerwoneDown  <= '0';
-   ZieloneDown  <= '1';
-    ZolteDown  <= '0';
-	PCzerwoneDown <= '0';
-PZieloneDown <= '1';
-PCzerwoneRight <= '1';
-PZieloneRight <= '0';
-	 counter <= counter+1;
+  	if(counter = 250000000) then --czerwone prawo
+		 CzerwoneRight <= '1';
+    		 ZieloneRight <= '0';
+    		 ZolteRight <= '0';
+	         CzerwoneDown  <= '0';
+                 ZieloneDown  <= '1';
+                 ZolteDown  <= '0';
+	         PCzerwoneDown <= '0';
+                 PZieloneDown <= '1';
+		 PCzerwoneRight <= '1';
+		 PZieloneRight <= '0';
+	         counter <= counter+1;
 	
 	elsif (counter = 500000000) then --zólte
-	CzerwoneRight <= '1';
-	 ZolteRight <= '1';
-    ZieloneRight <= '0';
-    CzerwoneDown  <= '0';
-    ZolteDown  <= '1';
-	 ZieloneDown  <= '0';
-	 PCzerwoneDown  <= '1';
- PZieloneDown <= '0';
-PCzerwoneRight <= '1';
-PZieloneRight <= '0';
-	 
-	 counter <= counter+1;
-	 
+		CzerwoneRight <= '1';
+	 	ZolteRight <= '1';
+    	 	ZieloneRight <= '0';
+    		CzerwoneDown  <= '0';
+    		ZolteDown  <= '1';
+	 	ZieloneDown  <= '0';
+	 	PCzerwoneDown  <= '1';
+ 		PZieloneDown <= '0';
+		PCzerwoneRight <= '1';
+		PZieloneRight <= '0';
 	 
 	 elsif (counter = 750000000) then --czerwone lewo
-	CzerwoneRight <= '0';
-    ZolteRight <= '0';
-	 ZieloneRight <= '1';
-	 CzerwoneDown  <= '1';
-   ZieloneDown  <= '0';
-    ZolteDown  <= '0';
-	 PCzerwoneDown <= '1';
- PZieloneDown <= '0';
-PCzerwoneRight <= '0';
-
-PZieloneRight <= '1';
-	 counter <= counter+1;
-	
+		CzerwoneRight <= '0';
+    		ZolteRight <= '0';
+	 	ZieloneRight <= '1';
+	 	CzerwoneDown  <= '1';
+   		ZieloneDown  <= '0';
+    		ZolteDown  <= '0';
+	 	PCzerwoneDown <= '1';
+ 		PZieloneDown <= '0';
+		PCzerwoneRight <= '0';
+		PZieloneRight <= '1';
 	 
 	 elsif (counter = 1000000000) then --zólte
-	CzerwoneRight <= '0';
-	 ZolteRight <= '1';
-    ZieloneRight <= '0';
-    CzerwoneDown  <= '1';
-    ZolteDown  <= '1';
-	 ZieloneDown  <= '0';
-	 PCzerwoneDown <= '1';
- PZieloneDown <= '0';
-PCzerwoneRight <= '1';
-PZieloneRight <= '0';
+		CzerwoneRight <= '0';
+	 	ZolteRight <= '1';
+    		ZieloneRight <= '0';
+    		CzerwoneDown  <= '1';
+    		ZolteDown  <= '1';
+	 	ZieloneDown  <= '0';
+	 	PCzerwoneDown <= '1';
+ 		PZieloneDown <= '0';
+		PCzerwoneRight <= '1';
+		PZieloneRight <= '0';
 	 
-	 counter <= 0;
-	 
-	 
-	 else 
-   counter <= counter+1;
+	 	counter <= 0;
   
-  end if;
+  	end if;
   end if;
   
-  
+  counter <= counter+1;
 
 end process;
-
-
 
 o_redDown <= CzerwoneDown;
 o_greenDown <= ZieloneDown;
@@ -126,6 +114,5 @@ o_pgreenRight <= PZieloneRight;
 o_predRight <= PCzerwoneRight;
 o_pgreenDown <= PZieloneDown;
 o_predDown <= PCzerwoneDown;
-
 
 end rtl;
